@@ -5,9 +5,9 @@ pipeline {
         maven 'maven3'
     }
     stages {
-        stage('Install') {
+        stage('Build') {
             steps {
-                sh "mvn -U clean package"
+                sh "mvn -U clean verify"
             }
         }
         stage('Sonar') {
