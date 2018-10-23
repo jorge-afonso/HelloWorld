@@ -15,4 +15,14 @@ public class ForCoverageTest {
 		assertEquals("TEST", result);
 	}
 
+	@Test
+	void testOtherGet() {
+
+		ForCoverage classUnderTest = new ForCoverage();
+		
+		final String result = classUnderTest.otherGet();
+
+		assertEquals("ANOTHER_TEST", result);
+	}
+
 }
