@@ -5,24 +5,9 @@ pipeline {
         maven 'maven3'
     }
     stages {
-        stage('Clean') {
-            steps {
-                sh "mvn clean"
-            }
-        }
         stage('Install') {
             steps {
-                sh "mvn -U clean test cobertura:cobertura -Dcobertura.report.format=xml"
-            }
-            post {
-                always {
-                    junit '**/target/*-reports/TEST-*.xml'
-                }
-            }
-        }
-        stage('Package') {
-            steps {
-                sh "mvn package"
+                sh "mvn -U clean package"
             }
         }
         stage('Sonar') {
