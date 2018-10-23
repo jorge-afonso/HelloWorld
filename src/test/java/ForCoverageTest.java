@@ -22,6 +22,16 @@ public class ForCoverageTest {
 		
 		final String result = classUnderTest.otherGet();
 
+		assertEquals("OTHER_TEST", result);
+	}
+
+	@Test
+	void testAnotherGet() {
+
+		ForCoverage classUnderTest = new ForCoverage();
+		
+		final String result = classUnderTest.anotherGet();
+
 		assertEquals("ANOTHER_TEST", result);
 	}
 
